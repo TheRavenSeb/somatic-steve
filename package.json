@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@discordjs/rest": "^2.4.0",
+    "discord-api-types": "^0.37.101",
+    "discord.js": "^14.16.2",
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0",
+    "pagination.djs": "^4.0.18",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
