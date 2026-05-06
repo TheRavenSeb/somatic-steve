@@ -11,9 +11,7 @@ var vars={
   ModCommands: [],
   db: new ModuleDatabase(),
   ModBD: new ModuleDatabase(),
-  teacherTalkID: "868060024654667776",
-  RavenID: "582279365912559631",
-
+ 
   
 };
 function splitArray(arr) {
@@ -33,7 +31,7 @@ const client = new Client({
 
 client.once('ready', () => {
   //set the disocrd activity to watching 
-  const activities = ["Reading up on commands"]
+  const activities = ["beepu beepu"]
   
   setInterval(() => {
     const status = activities[Math.floor(Math.random() * activities.length)];
@@ -58,15 +56,12 @@ client.on('messageCreate', async message => {
 
   
 
-  // Allow members of the teacher-talk channel to preview commands by using! instead of /.
-  if (message.channel.id === vars.teacherTalkID && message.content.startsWith('!')) {
-    const commandName = message.content.split('!')[1].toLowerCase();
-    await PreviewSlashCommand(message, commandName);}
+ 
 
-  else if (message.content.toLowerCase().startsWith('help ')) {
+  if (message.content.toLowerCase().startsWith('help ')) {
     const moduleName = message.content.split(' ')[1].toLowerCase();
-    await PreviewModuleCommand(message, moduleName);
-    //message.reply("This command is disabled for now")
+    //await PreviewModuleCommand(message, moduleName);
+    message.reply("This command is disabled for now")
   }
 
   // Discord IDs of users who are permitted to register slash commands.
@@ -285,7 +280,6 @@ async function PreviewModuleCommand(message, moduleName, IsEphemeral) {
   var paginationMod = new Pagination(message);
   var Helpcommand = vars.ModCommands.find(c => c.Trigger === moduleName.toLowerCase().replace(/ /g, "-").replace(/\*/g,"-"));
   if (!Helpcommand || Helpcommand == null || Helpcommand == undefined ) {
-    console.error(`Sorry, I'm having an Spriggull brain moment please let the Meta Teachers know about this!`);
     message.reply(`Sorry, this isn't a module please run **/list-modules**`)
     return;
   }
