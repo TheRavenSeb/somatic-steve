@@ -9,9 +9,14 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "conventional-changelog-angular": "^8.3.1",
+    "conventional-changelog-cli": "^5.0.0"
   }
 }
