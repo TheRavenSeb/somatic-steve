@@ -608,7 +608,7 @@ client.on("interactionCreate", async interaction => {
     IsEphemeral = false;
   }
   if ( interaction.commandName === "update-slash-commands") {
-    if (!["582279365912559631"].includes(interaction.user.id)) {
+    if (!["582279365912559631","516691397126914079"].includes(interaction.user.id)) {
       await interaction.reply({content: 'You do not have permission to use this command.', ephemeral: true});
       return;
     }
